@@ -1,0 +1,131 @@
+/* Sidebar main container */
+.sidebar-container {
+  width: 240px;
+  height: 100vh;
+  background: #111827; /* Dark Navy */
+  color: white;
+  padding: 25px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  left: 0;
+  border-radius: 0 25px 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header / Logo */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-logo {
+  font-size: 1.8rem;
+  color: #60a5fa;
+  margin-right: 10px;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f9fafb;
+}
+
+/* List */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each menu item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: 0.2s ease-in-out;
+}
+
+/* Icons */
+.sidebar-icon {
+  font-size: 1.2rem;
+  margin-right: 12px;
+}
+
+/* Hover Style */
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* Active Menu */
+.sidebar-item.active {
+  background: #1f2937;
+  color: #60a5fa;
+  font-weight: bold;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Right arrow in active item */
+.arrow {
+  color: #60a5fa;
+}
+/* PROFILE BLOCK */
+.profile-block {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #1f1f1f;
+  border-radius: 12px;
+  margin: 15px 10px 20px;
+  color: white;
+}
+
+.profile-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid #ffffff50;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.profile-email {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 13px;
+}
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff4d4d;
+}

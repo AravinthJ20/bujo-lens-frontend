@@ -1,0 +1,71 @@
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9ff, #edf3ff);
+}
+
+.auth-left {
+  flex: 1;
+  padding: 60px;
+}
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.auth-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* CARD ROW */
+.testimonial-cards {
+  display: flex;
+  gap: 20px;
+}
+
+/* INDIVIDUAL CARD */
+.t-card {
+  width: 220px;
+  height: 260px;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+  transition: 0.3s ease;
+}
+
+.t-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+/* BuJo-themed sample images */
+.t1 {
+  background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70");
+}
+
+.t2 {
+  background-image: url("https://images.unsplash.com/photo-1501270067467-829b09e3b569");
+}
+
+.t3 {
+  background-image: url("https://images.unsplash.com/photo-1504711434969-e33886168f5c");
+}
+
+/* Form card */
+.auth-card {
+  width: 380px;
+  border-radius: 16px;
+}

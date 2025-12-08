@@ -1,0 +1,20 @@
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 220px; /* Matches sidebar width */
+  right: 0;
+
+  height: 55px;
+  padding: 18px 30px;
+
+  background: linear-gradient(90deg, #6a5af9, #8755e0);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 25px 25px 25px 25px;
+  display: flex;
+  align-items: center;
+
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
