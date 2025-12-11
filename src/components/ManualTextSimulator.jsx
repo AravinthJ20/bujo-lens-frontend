@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
+const Base_URL = process.env.REACT_APP_API_BASE_URL;
+
 
 export default function ManualTextSimulator({ onResult }) {
   const [text, setText] = useState("");
@@ -15,7 +17,7 @@ export default function ManualTextSimulator({ onResult }) {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/simulate-text",
+        `${Base_URL}/api/simulate-text`,
         { text },
         {
           headers: { Authorization: `Bearer ${token}` }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+const Base_URL = process.env.REACT_APP_API_BASE_URL;
 
 export default function Dashboard() {
   const [stats, setStats] = useState({
@@ -17,7 +18,7 @@ export default function Dashboard() {
 
   const loadStats = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get("http://localhost:5000/api/dashboard", {
+    const res = await axios.get(`${Base_URL}/api/dashboard`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setStats(res.data);

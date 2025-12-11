@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
+const Base_URL = process.env.REACT_APP_API_BASE_URL;
 
 export default function CalendarPage() {
   const [date, setDate] = useState("");
@@ -19,7 +20,7 @@ export default function CalendarPage() {
     const finalText = time ? `${time} - ${text}` : text;
 
     await axios.post(
-      "http://localhost:5000/api/entriesManual/manual-entry",
+      `${Base_URL}/api/entriesManual/manual-entry`,
       {
         date,
         text: finalText,

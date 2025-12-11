@@ -28,6 +28,7 @@
 // export default SearchPage;
 import React, { useState } from "react";
 import axios from "axios";
+const Base_URL = process.env.REACT_APP_API_BASE_URL;
 
 export default function SearchPage() {
   const [text, setText] = useState("");
@@ -38,7 +39,7 @@ export default function SearchPage() {
 
     const token = localStorage.getItem("token");
 
-    const res = await axios.get(`http://localhost:5000/api/search?q=${text}`, {
+    const res = await axios.get(`${Base_URL}/api/search?q=${text}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
 

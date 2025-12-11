@@ -10,6 +10,7 @@ import {
   Badge,
   Modal,
 } from "react-bootstrap";
+const Base_URL = process.env.REACT_APP_API_BASE_URL;
 
 export default function EntriesPage() {
   const [entries, setEntries] = useState([]);
@@ -48,7 +49,7 @@ const deleteEntry = async (entry) => {
 
   try {
     const token = localStorage.getItem("token");
-    await axios.delete(`http://localhost:5000/api/entries/${entry._id}`, {
+    await axios.delete(`${Base_URL}/api/entries/${entry._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -63,7 +64,7 @@ const saveEntryChanges = async () => {
     const token = localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:5000/api/entries/${editData._id}`,
+      `${Base_URL}/api/entries/${editData._id}`,
       editData,
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -84,7 +85,7 @@ const saveEntryChanges = async () => {
   const loadEntries = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/entries", {
+      const res = await axios.get(`${Base_URL}/api/entries`, {
         headers: { Authorization: `Bearer ${token}` },
         params: filters,
       });
@@ -135,7 +136,7 @@ const saveEntryChanges = async () => {
   const exportFiltered = () => {
     const query = new URLSearchParams(filters).toString();
     downloadFile(
-      `http://localhost:5000/api/export/filtered?${query}`,
+      `${Base_URL}/api/export/filtered?${query}`,
       "filtered-entries.txt"
     );
   };
@@ -160,7 +161,7 @@ const saveEntryChanges = async () => {
               variant="outline-primary"
               onClick={() =>
                 downloadFile(
-                  "http://localhost:5000/api/export/taskpaper",
+                  `${Base_URL}/api/export/taskpaper`,
                   "bujo.taskpaper"
                 )
               }
@@ -173,7 +174,7 @@ const saveEntryChanges = async () => {
               variant="outline-success"
               onClick={() =>
                 downloadFile(
-                  "http://localhost:5000/api/export/markdown",
+                  `${Base_URL}/api/export/markdown`,
                   "notes.md"
                 )
               }
@@ -181,12 +182,12 @@ const saveEntryChanges = async () => {
               📝 Export Markdown
             </Button>
             <Button variant="outline-primary" 
-        onClick={() => downloadFile("http://localhost:5000/api/export/tasks", "tasks.taskpaper")}>
+        onClick={() => downloadFile(`${Base_URL}/api/export/tasks`, "tasks.taskpaper")}>
   📄 Export Tasks
 </Button>
 
 <Button variant="outline-success" 
-        onClick={() => downloadFile("http://localhost:5000/api/export/notes", "notes.md")}>
+        onClick={() => downloadFile(`${Base_URL}/api/export/notes`, "notes.md")}>
   📝 Export Notes
 </Button>
 
